@@ -6,7 +6,7 @@ import DifferentMeanings from "./DifferentMeanings";
 import { useDictionaryApp } from "../context";
 const Dictionary = () => {
   const { searchQuery } = useDictionaryApp();
-  const { isLoading, data, isError, error } = useQuery({
+  const { isLoading, data, isError } = useQuery({
     queryKey: ["word", searchQuery],
     queryFn: async () => {
       const response = await axios(`${API_ENDPOINT}/${searchQuery}`);
@@ -19,9 +19,7 @@ const Dictionary = () => {
   }
 
   if (isError) {
-    return (
-      <div className='section-center error'>{error.response.data.title}</div>
-    );
+    return <div className='section-center error'>No Definitions Found</div>;
   }
 
   return (

@@ -8,12 +8,10 @@ interface IDifferentMeaningsProp {
 const DifferentMeanings: React.FC<IDifferentMeaningsProp> = ({
   definition,
 }) => {
-  // const { definition } = useDictionaryApp();
-
   return (
     <section>
       <div className='section-center'>
-        {definition?.map((d) => {
+        {definition.map((d) => {
           return <Meanings key={nanoid()} {...d} />;
         })}
       </div>

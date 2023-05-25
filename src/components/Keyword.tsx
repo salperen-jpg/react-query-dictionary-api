@@ -1,6 +1,6 @@
 import { BiPlay } from "react-icons/bi";
 import { styled } from "styled-components";
-import { ISingleDef } from "../utils/Dictionary.Models";
+import { ISingleDef, IPhonetic } from "../utils/Dictionary.Models";
 interface IKeywordProps {
   definition: ISingleDef[];
 }
@@ -9,11 +9,11 @@ const Keyword: React.FC<IKeywordProps> = ({ definition }) => {
   const { word, phonetics } = definition[0];
 
   const getText = () => {
-    return phonetics.find((a: any) => a.text)?.text || "";
+    return phonetics.find((a: IPhonetic) => a.text)?.text || "";
   };
 
   const getAudio = () => {
-    return phonetics.find((a: any) => a.audio)!.audio;
+    return phonetics.find((a: IPhonetic) => a.audio)?.audio;
   };
 
   const playMusic = () => {
@@ -28,7 +28,7 @@ const Keyword: React.FC<IKeywordProps> = ({ definition }) => {
           <h1>{word}</h1>
           <span>{getText()}</span>
         </div>
-        <button onClick={playMusic} className='btn sound-btn'>
+        <button onClick={() => playMusic()} className='btn sound-btn'>
           <BiPlay></BiPlay>
         </button>
       </div>

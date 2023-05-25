@@ -3,8 +3,7 @@ import { useDictionaryApp } from "../context";
 import { styled } from "styled-components";
 import { useRef } from "react";
 const Form = () => {
-  const { fetchDefinition, isError, toggleError, setSearchQuery } =
-    useDictionaryApp();
+  const { isError, toggleError, setSearchQuery } = useDictionaryApp();
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -14,7 +13,9 @@ const Form = () => {
 
       if (!value) {
         toggleError(true, "Please enter a word.");
+        return;
       }
+      toggleError(false, "");
       setSearchQuery(value);
     }
   };

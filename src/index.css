@@ -160,6 +160,24 @@ section {
   color: var(--red-dark);
 }
 
+/* LOADING */
+.loading {
+  width: 6rem;
+  height: 6rem;
+  margin: 5rem auto;
+  border: 5px solid var(--grey-400);
+  border-radius: 50%;
+  border-top-color: var(--primary-500);
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* DARK THEME EXTRA */
 .dark-theme .form-input:focus {
   border: 2px solid var(--white);
 }

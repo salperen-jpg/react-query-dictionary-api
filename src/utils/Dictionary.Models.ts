@@ -3,17 +3,14 @@ export interface IChildrenProp {
 }
 
 export interface IContextType {
-  isLoading: boolean;
   isError: {
     show: boolean;
     msg: string;
   };
-  definition: ISingleDef[] | undefined;
   isDarkTheme: boolean;
   fontFamily: string;
   toggleTheme: () => void;
   setFont: (value: string) => void;
-  fetchDefinition: (value: string) => void;
   toggleError: (show: boolean, msg: string) => void;
   searchQuery: string;
   setSearchQuery: (a: string) => void;
