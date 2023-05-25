@@ -15,6 +15,8 @@ export interface IContextType {
   setFont: (value: string) => void;
   fetchDefinition: (value: string) => void;
   toggleError: (show: boolean, msg: string) => void;
+  searchQuery: string;
+  setSearchQuery: (a: string) => void;
 }
 
 export interface IPhonetic {

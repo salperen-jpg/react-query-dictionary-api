@@ -1,8 +1,14 @@
-import { useDictionaryApp } from "../context";
 import Meanings from "./Meanings";
 import { nanoid } from "nanoid";
-const DifferentMeanings = () => {
-  const { definition } = useDictionaryApp();
+import { ISingleDef } from "../utils/Dictionary.Models";
+interface IDifferentMeaningsProp {
+  definition: ISingleDef[];
+}
+
+const DifferentMeanings: React.FC<IDifferentMeaningsProp> = ({
+  definition,
+}) => {
+  // const { definition } = useDictionaryApp();
 
   return (
     <section>

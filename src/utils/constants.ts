@@ -13,4 +13,6 @@ export const initialContextValues = {
   setFont: () => {},
   fetchDefinition: () => {},
   toggleError: () => {},
+  searchQuery: "hello",
+  setSearchQuery: () => {},
 };

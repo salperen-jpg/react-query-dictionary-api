@@ -27,6 +27,7 @@ export const AppProvider = ({ children }: IChildrenProp) => {
   const [definition, setDefinition] = useState<ISingleDef[] | undefined>();
   const [isDarkTheme, setIsDarkTheme] = useState(getInitialTheme());
   const [fontFamily, setFontFamily] = useState("space-grotesk");
+  const [searchQuery, setSearchQuery] = useState("hello");
 
   const fetchDefinition = async (value: string) => {
     setIsLoading(true);
@@ -82,6 +83,8 @@ export const AppProvider = ({ children }: IChildrenProp) => {
         setFont,
         fetchDefinition,
         toggleError,
+        searchQuery,
+        setSearchQuery,
       }}
     >
       {children}

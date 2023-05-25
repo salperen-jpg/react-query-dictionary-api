@@ -1,9 +1,12 @@
-import { useDictionaryApp } from "../context";
 import { BiPlay } from "react-icons/bi";
 import { styled } from "styled-components";
-const Keyword = () => {
-  const { definition } = useDictionaryApp();
-  const { word, phonetics } = definition![0];
+import { ISingleDef } from "../utils/Dictionary.Models";
+interface IKeywordProps {
+  definition: ISingleDef[];
+}
+
+const Keyword: React.FC<IKeywordProps> = ({ definition }) => {
+  const { word, phonetics } = definition[0];
 
   const getText = () => {
     return phonetics.find((a: any) => a.text)?.text || "";

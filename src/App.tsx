@@ -1,6 +1,5 @@
-import DifferentMeanings from "./components/DifferentMeanings";
+import Dictionary from "./components/Dictionary";
 import Form from "./components/Form";
-import Keyword from "./components/Keyword";
 import Navbar from "./components/Navbar";
 import { useDictionaryApp } from "./context";
 
@@ -20,8 +19,7 @@ function App() {
     <>
       <Navbar />
       <Form />
-      <Keyword />
-      <DifferentMeanings />
+      <Dictionary />
     </>
   );
 }
